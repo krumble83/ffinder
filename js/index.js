@@ -55,18 +55,15 @@ var mainView = app.views.create('.view-main', {
     {
 	  path: '/search/',
 	  async(routeTo, routeFrom, resolve, reject) {
-		    console.log(routeTo, routeFrom);
+		    //console.log(routeTo, routeFrom);
 			var dt = data['_search'];
-			
-			dt.dlms = {};
-			
-			app.request.json('search.php?action=getdlms&type=search&category=', function(data){
+			dt.category = routeTo.query.category;
+			dt.pageTitle = routeTo.query.title;
+						
+			app.request.json('search.php?action=getdlms&category='+routeTo.query.category, function(data){
 				dt.dlms = data;
-				dt.category = routeTo.query.category;
-				dt.pageTitle = routeTo.query.title;
-				//console.log(dt);
 				resolve({template: templates['searchpage'](dt)});
-				
+				return;
 				toastCenter = app.toast.create({
 				  text: 'Your download will be available in 30 seconds.',
 				  position: 'center',
@@ -78,13 +75,14 @@ var mainView = app.views.create('.view-main', {
 			return;
   	  }
 	},
+	
 	{
 	  path: '/browse/',
-	  async(routeTo, routeFrom, resolve, reject) {
-		
+	  async(routeTo, routeFrom, resolve, reject) {		
 		resolve({ template: templates[data['_browse'].tpl](data['_browse'])});
       }
 	},
+	
 	{
 	  path: '/dosearch/',
 	  url: 'search.php?action=search',
@@ -94,20 +92,20 @@ var mainView = app.views.create('.view-main', {
         },
       },
 	},
+	
 	{
 	  path: '(.*)',
 	  async(routeTo, routeFrom, resolve, reject) {
 		console.log(routeTo, routeFrom, app.views.main.router.url);
 
 		if(typeof routeFrom.path === "undefined"){
-			resolve({ template: templates[data['main'].tpl](data['main'])});
+			resolve({template: templates[data['main'].tpl](data['main'])});
 			return;
 		}
 		if(!routeTo.hash)
-			return;
+			return reject();
 
-		//data[routeTo.hash]['pageName'] = routeTo.hash
-		resolve({ template: templates[data[routeTo.hash].tpl](data[routeTo.hash])});
+		resolve({template: templates[data[routeTo.hash].tpl](data[routeTo.hash])});
 		//resolve({ template: templates.navpage(data[routeTo.hash])});
         //resolve({ pageName: routeTo.hash });
       }

@@ -2,7 +2,7 @@
 /* Copyright (c) 2012 Synology Inc. All rights reserved. */
 
 
-class  {
+class DlmBeemp3sOrg {
 
 	public function __construct() {
 	}

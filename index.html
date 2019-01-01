@@ -105,7 +105,7 @@
 				{{> navbar}}
 				<div class="page-content">
 					<br />
-					<form action="search.php?action=search" method="POST" class="form-ajax-submit">
+					<form action="search.php?action=search&category={{category}}" method="POST" class="form-ajax-submit">
 						<div class="searchbar inset">
 							<div class="searchbar-inner">
 								<div class="searchbar-input-wrap">
@@ -119,11 +119,11 @@
 						</div>
 						<div class="block-title">{{translate 'DOWNLOAD_TYPE'}}</div>
 						<div class="list">
-							<ul>				
+							<ul>
 								{{#each dlms}}
 								<li>
 									<a class="item-link smart-select smart-select-init" data-open-in="popup">
-										<select name="{{@key}}" multiple onchange="console.log(arguments)">
+										<select name="{{@key}}" multiple>
 											<option value="all">{{translate 'ALL_NONE'}}</option>
 											{{#each this}}
 											<option value="{{name}}" selected>{{title}}</option>
