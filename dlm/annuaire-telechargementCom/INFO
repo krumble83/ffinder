@@ -1,0 +1,12 @@
+{
+"name": "annuaire-telechargementCom",
+"displayname": "annuaire-telechargement.com",
+"description": "",
+"version": "1.0",
+"accountsupport": false,
+"site": "https://www.annuaire-telechargement.com",
+"module": "search.php",
+"type": "filehoster",
+"class": "DlmAnnuaireTelechargementCom"
+}
+

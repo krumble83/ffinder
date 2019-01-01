@@ -1,0 +1,138 @@
+{
+	"main": {
+		"pageTitle": "fFinder",
+		"tpl": "navpage",
+		"main": "1",
+		"childs": {
+			"videos": {"title": "Videos", "target": "videos", "description": "Movies, TV Shows, TV Programs ...", "img": "img/video.png"},
+			"audio": {"title": "Audio", "target": "audio", "description": "Songs, Albums ...", "img": "img/audio.png"},
+			"games": {"title": "Video Games", "target": "games", "description": "PC, Mac, Console or Android Games", "img": "img/games.png"},
+			"applications": {"title": "Applications", "target": "applications", "description": "Applications for PC/Mac/Android", "img": "img/application.png"},
+			"ebooks": {"title": "Ebooks", "target": "ebooks", "description": "Electronic books ...", "img": "img/ebook.png"},
+		}
+	},
+
+	"videos": {
+		"pageTitle": "Videos",
+		"tpl": "navpage",
+		"childs": {
+			"movies": {"title": "Movies", "description": "", "img": "img/movie.png"}, 
+			"tvshows": {"title": "TV Shows", "description": "", "img": "img/tvshow.png"}, 
+			"comic": {"title": "Comics Movies", "description": "", "img": "img/comic.png"}, 
+			"animation": {"title": "Animation Movies", "description": ""}, 
+			"documentary": {"title": "Documentary", "description": "", "img": "img/documentary.png"}, 
+			"tvprogram": {"title": "TV Programs", "description": "", "img": "img/tvprogram.png"}, 
+		}
+	},
+		
+	"games": {
+		"pageTitle": "Video Games",
+		"tpl": "navpage",
+		"childs": {
+			"wingames": {"title": "Windows Games", "img": "img/windows.png"}, 
+			"macgames": {"title": "Mac Games", "img": "img/mac.png"}, 
+
+			"msgames": {"title": "Microsoft Console Games", "target": "msgames", "img": "img/xbox.png"}, 
+			"sonygames": {"title": "Sony Console Games", "target": "sonygames", "img": "img/sony.png"}, 
+			"nintendogames": {"title": "Nintendo Console Games", "target": "nintendogames", "img": "img/nintendo.png"}, 
+			
+			"androidgames": {"title": "Android Game", "img": "img/android.png"}, 
+			"lingames": {"title": "Linux Games", "img": "img/linux.png"}, 
+			"arcadegames": {"title": "Arcade Games", "img": "img/arcade.png"}, 
+		}
+	},
+
+	"msgames": {
+		"pageTitle": "Microsoft Console Games",
+		"tpl": "navpage",
+		"childs": {
+			"mxbox": {"title": "Xbox Games", "img": "img/xbox.png"}, 
+			"mxbox360": {"title": "Xbox 360 Games", "img": "img/xbox.png"}, 
+			"mxboxone": {"title": "Xbox One Games", "img": "img/xbox.png"}, 
+		}
+	},
+	"nintendogames": {
+		"pageTitle": "Nintendo Console Games",
+		"tpl": "navpage",
+		"childs": {
+			"nswitch": {"title": "Nintendo Switch", "img": "img/nswitch.png"},
+			"nwiiu": {"title": "Nintendo Wii U", "img": "img/wiiu.png"},
+			"nwii": {"title": "Nintendo Wii", "img": "img/wii.png"},
+			"ngc": {"title": "Nintendo GameCube"}, 
+			"n64": {"title": "Nintendo 64"}, 
+			"nsnes": {"title": "Nintendo Super NES"}, 
+			"nnes": {"title": "Nintendo NES"}, 
+
+			"n3ds": {"title": "Nintendo 3DS"}, 
+			"nds": {"title": "Nintendo DS"}, 
+			"ngba": {"title": "Nintendo GameBoy Advance"}, 
+			"ngbc": {"title": "Nintendo GameBoy Color"}, 
+			"ngb": {"title": "Nintendo GameBoy", "img": "img/game-boy.png"}, 
+		}
+	},
+
+	"sonygames": {
+		"pageTitle": "Sony Console Games",
+		"tpl": "navpage",
+		"childs": {
+			"sps4": {"title": "PS4 Games", "img": "img/ps4.png"}, 
+			"sps3": {"title": "PS3 Games", "img": "img/ps3.png"}, 
+			"sps2": {"title": "PS2 Games", "img": "img/ps2.png"}, 
+			"spsone": {"title": "Playstation Games", "img": "img/sony.png"}, 
+			"spsvita": {"title": "PSP Vita", "img": "img/psvita.png"}, 
+			"spsp": {"title": "PSP Games", "img": "img/psp.png"}, 
+		}
+	},
+	
+	"applications": {
+		"pageTitle": "Applications",
+		"tpl": "navpage",
+		"childs": {
+			"winapps": {"title": "Windows Application", "img": "img/pc.png", "img": "img/windows.png"}, 
+			"macapps": {"title": "Mac Application", "img": "img/mac.png", "img": "img/mac.png"}, 
+			"androidapps": {"title": "Android Application", "img": "img/android.png", "img": "img/android.png"}, 
+			"linapps": {"title": "Linux Application", "img": "img/pc.png", "img": "img/linux.png"}, 
+		}
+	},
+
+	"audio": {
+		"pageTitle": "Audio",
+		"tpl": "navpage",
+		"childs": {
+			"mp3song": {"title": "Mp3 Song", "img": "img/song.png"}, 
+			"mp3album": {"title": "Mp3 Album", "img": "img/album.png"}
+		}
+	},
+
+	"ebooks": {
+		"pageTitle": "Ebooks",
+		"tpl": "navpage",
+		"childs": {
+			"books": {"title": "Books"}, 
+			"audiobooks": {"title": "Audio Books"}, 
+			"comics": {"title": "Comics"}, 
+			"mangas": {"title": "Mangas"}, 
+		}
+	},
+	
+	"_search": {
+		"pageTitle": "Search Ebooks",
+		"tpl": "navpage",	
+	},
+	
+	"_typelabel": {
+		"search": "Bitorrent",
+		"filehoster": "File Hoster",
+		"directdl": "Direct Download"
+	},
+	
+	"_strings": {
+		"SEARCH_ON": "Search on :",
+		"SEARCH": "Search",
+		"LOOKING_FOR": "What are you looking for ?",
+		"SETTINGS_BUTTON": "Settings",
+		"ABOUT_BUTTON": "About",
+		"ALL_NONE": "* All / None",
+	}
+
+}
