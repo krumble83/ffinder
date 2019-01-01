@@ -7,8 +7,10 @@ Template7.registerHelper('getDlmLabel', function (name) {
   return data['_typelabel'][name];
 });
 
-Template7.registerHelper('getPageTitle', function (pageName) {
-  return data[pageName]['title'];
+Template7.registerHelper('getTarget', function (name) {
+	if(name.substring(0,1) != '/')
+		return '#'+name;
+	return name;
 });
 
 Template7.registerHelper('translate', function (name) {
@@ -25,6 +27,7 @@ var app  = new Framework7({
     init: function (page) {
 	  templates.navpage = Template7.compile($$('#navpage').html());
 	  templates.searchpage = Template7.compile($$('#searchpage').html());
+	  templates.navbrowse = Template7.compile($$('#navbrowse').html());
 	  Template7.registerPartial('navbar', $$('#navbar').html());
 	  
 	  return;
@@ -60,7 +63,7 @@ var mainView = app.views.create('.view-main', {
 			app.request.json('search.php?action=getdlms&type=search&category=', function(data){
 				dt.dlms = data;
 				dt.category = routeTo.query.category;
-				dt.fromPageTitle = routeTo.query.title;
+				dt.pageTitle = routeTo.query.title;
 				//console.log(dt);
 				resolve({template: templates['searchpage'](dt)});
 				
@@ -74,6 +77,13 @@ var mainView = app.views.create('.view-main', {
 
 			return;
   	  }
+	},
+	{
+	  path: '/browse/',
+	  async(routeTo, routeFrom, resolve, reject) {
+		
+		resolve({ template: templates[data['_browse'].tpl](data['_browse'])});
+      }
 	},
 	{
 	  path: '/dosearch/',

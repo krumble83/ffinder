@@ -140,7 +140,7 @@
 							</ul>
 						</div>
 						<div class="fab fab-extended fab-center-bottom" style="width:150px">
-							<a href="/dosearch/" style="width:150px">Search</a>
+							<input type="submit" style="width:150px" value="{{translate 'SEARCH'}}" />
 						</div>
 					</form>
 				</div>
@@ -150,12 +150,17 @@
 			<div class="page">
 				{{> navbar}}
 				<div class="page-content">
-					<div class="block-title">{{translate 'LOOKING_FOR'}}</div>
+					
 					<div class="list  media-list">
 					  <ul>
+					    <li class="item-divider">{{translate 'LOOKING_FOR'}}</li>
 						{{#each childs}}
+						{{#unless this.title}}
+						<br />
+						<li class="item-divider">{{this.label}}</li>
+						{{else}}				
 						<li>
-						  <a href="{{#if this.target}}#{{this.target}}{{else}}/search/?category={{@key}}&title={{this.title}}{{/if}}" class="item-content item-link panel-close">
+						  <a href="{{#if this.target}}{{getTarget this.target}}{{else}}/search/?category={{@key}}&title={{this.title}}{{/if}}" class="item-content item-link panel-close">
 							{{#if this.img}}
 							<div class="item-media"><img height="32" width="32" src="{{this.img}}" width="80"/></div>
 							{{/if}}
@@ -166,13 +171,45 @@
 								<div class="item-subtitle">{{description}}</div>
 							</div>
 						  </a>
-						</li>
+						</li>		
+						{{/unless}}
 						{{/each}}
 					  </ul>
 					</div>
 				</div>
 			</div>
 		</script>
+
+		<script type="text/template7" id="navbrowse">
+			<div class="page">
+				{{> navbar}}
+				<div class="page-content">					
+					<div class="list  media-list">
+					  <ul>
+					    <li class="item-divider">{{translate 'BROWSE_FAVORITES'}}</li>
+						{{#each childs}}
+						<li>
+						  <a href="{{#if this.target}}{{getTarget this.target}}{{else}}/search/?category={{@key}}&title={{this.title}}{{/if}}" class="item-content item-link panel-close">
+							{{#if this.img}}
+							<div class="item-media"><img height="32" width="32" src="{{this.img}}" width="80"/></div>
+							{{/if}}
+							<div class="item-inner">
+								<div class="item-title-row">
+									<div class="item-title">{{this.title}}</div>
+								</div>
+								<div class="item-subtitle">{{description}}</div>
+							</div>
+						  </a>
+						</li>		
+						{{/each}}
+						<br />
+					    <li class="item-divider">{{translate 'BROWSE_OTHERS'}}</li>
+					  </ul>
+					</div>
+				</div>
+			</div>
+		</script>
+		
 		<script src="search.php?action=getnav"></script>
 		<script src="js/framework7.min.js"></script>
 		<script src="js/index.js"></script>

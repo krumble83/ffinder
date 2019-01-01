@@ -9,6 +9,8 @@
 			"games": {"title": "Video Games", "target": "games", "description": "PC, Mac, Console or Android Games", "img": "img/games.png"},
 			"applications": {"title": "Applications", "target": "applications", "description": "Applications for PC/Mac/Android", "img": "img/application.png"},
 			"ebooks": {"title": "Ebooks", "target": "ebooks", "description": "Electronic books ...", "img": "img/ebook.png"},
+			"z": {"label": "Browse"},
+			"browse": {"title": "Latest posts", "target": "/browse/", "img": "img/new.png"},
 		}
 	},
 
@@ -108,22 +110,37 @@
 		"pageTitle": "Ebooks",
 		"tpl": "navpage",
 		"childs": {
-			"books": {"title": "Books"}, 
-			"audiobooks": {"title": "Audio Books"}, 
-			"comics": {"title": "Comics"}, 
+			"books": {"title": "Books", "img": "img/ebook.png"}, 
+			"audiobooks": {"title": "Audio Books", "img": "img/audiobook.png"}, 
+			"comics": {"title": "Comics", "img": "img/comic.png"}, 
 			"mangas": {"title": "Mangas"}, 
 		}
 	},
 	
+	"_browse": {
+		"pageTitle": "Browse",
+		"tpl": "navbrowse",
+	
+	},
+
+	"_sidebar": {
+		"childs": {
+			"settings": {"title": "Settings", "img": "img/ebook.png", "target": "/settings/"}, 
+			"modules": {"title": "Modules", "img": "img/audiobook.png", "target": "/modules/"}, 
+			"about": {"title": "About", "img": "img/comic.png", "target": "/about/"}, 
+		}	
+	},
+	
 	"_search": {
 		"pageTitle": "Search Ebooks",
-		"tpl": "navpage",	
+		"tpl": "navpage",
 	},
 	
 	"_typelabel": {
-		"search": "Bitorrent",
-		"filehoster": "File Hoster",
-		"directdl": "Direct Download"
+		"search": "Bitorrents",
+		"filehoster": "File Hosters",
+		"directdl": "Direct Downloads",
+		"board": "Boards"
 	},
 	
 	"_strings": {
@@ -133,6 +150,8 @@
 		"SETTINGS_BUTTON": "Settings",
 		"ABOUT_BUTTON": "About",
 		"ALL_NONE": "* All / None",
+		"BROWSE_FAVORITES": "Favorites :",
+		"BROWSE_OTHERS": "Others :",
 	}
 
 }

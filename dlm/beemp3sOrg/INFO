@@ -1,0 +1,12 @@
+{
+"name": "beemp3sOrg",
+"displayname": "beemp3s.org",
+"description": "",
+"version": "1.0",
+"accountsupport": false,
+"site": "https://www.beemp3s.org",
+"module": "search.php",
+"type": "directdl",
+"class": "DlmBeemp3sOrg"
+}
+
