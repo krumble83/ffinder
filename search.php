@@ -41,6 +41,11 @@ switch($_GET['action']){
 		$res = $session->search($_GET['string'], $_GET['dlm']);
 		exit(json_encode($res));
 		break;
+		
+	case 'getbrowsepage':
+		$res = $session->getDlmPage($_GET['dlm'], $_GET['page']);
+		exit(json_encode($res));
+		break;
 }
 
 
