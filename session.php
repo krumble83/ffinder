@@ -46,8 +46,8 @@ class UserSession {
 			return;
 		require_once($dlm['dlmpath'].'/'.$dlm['module']);
 		$dlmi = new $dlm['class']();
-		$s = curl_init(); 
-		
+		$curl = curl_init(); 
+		$dlmi->prepare($curl, $string, $_COOKIE["dlm_$dml_username"], $_COOKIE["dlm_$dml_password"]);
 	}
 	
 	public function getbrowsepage($dlm, $page){
