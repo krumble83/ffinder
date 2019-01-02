@@ -1,8 +1,6 @@
 {
-"ffinder": {
-	"categories": ["movies", "tvshows", "pcgames", "mxbox360", "sps3", "spsp", "nds", "n3ds", "nwii", "macgames", "ebooks"],
+	"categories": ["movies", "tvshows", "documentaries", "tvprograms", "wingames"],
 	"lang": "fr",
 	"author_name": "krumble",
 	"author_email": "krumble83@gmail.com"
-	}
 }
