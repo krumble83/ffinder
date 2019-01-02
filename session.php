@@ -91,7 +91,7 @@ class UserSession {
 		if(file_exists("$path/EXTENDED")){
 			$string = file_get_contents("$path/EXTENDED");
 			$json2 = json_decode($string, true);
-			$json = array_merge($json, $json2);
+			$json['ffinder'] = $json2;
 		}
 		return $json;
 	}
