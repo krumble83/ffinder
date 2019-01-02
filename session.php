@@ -32,6 +32,24 @@ class UserSession {
 
 	}
 	
+	public function getDlmByName($name){
+		foreach($this->mDlm as $k=>$v){
+			if($v['name'] == $name)
+				return $v;
+		}
+		return null;
+	}
+	
+	public function search($string, $dlm){
+		$dlm = $this->getDlmByName($dlm);
+		if(!$dlm)
+			return;
+		require_once($dlm['dlmpath'].'/'.$dlm['module']);
+		$dlmi = new $dlm['class']();
+		$s = curl_init(); 
+		
+	}
+	
 	private function loadDlms(){
 		$dir    = 'dlm';
 		$files = scandir($dir);
@@ -47,6 +65,7 @@ class UserSession {
 				//print_r($nfo);
 				if($nfo !== NULL && $this->checkDlm($nfo, __DIR__."/dlm/".$f) == 0)
 					//array_push($this->mDlm, $nfo);
+					$nfo['dlmpath'] = __DIR__."/dlm/$f";
 					$this->mDlm[$f] = $nfo;
 			}
 			else
