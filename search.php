@@ -38,7 +38,8 @@ switch($_GET['action']){
 		break;
 		
 	case 'search':
-		exit('<div class="page"></page>');
+		$res = $session->search($_GET['string'], $_GET['dlm']);
+		exit(json_encode($res));
 		break;
 }
 
