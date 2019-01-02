@@ -21,10 +21,14 @@ Template7.registerHelper('translate', function (name) {
 var app  = new Framework7({
   root: '#app',
   pushState: true,
+  panel: {
+    swipe: 'left',
+    swipeActiveArea: 50,
+  },	
   swipePanel: 'left',
   swipeActiveArea: 20,
   on: {
-    init: function (page) {
+    init: function () {
 	  templates.navpage = Template7.compile($$('#navpage').html());
 	  templates.searchpage = Template7.compile($$('#searchpage').html());
 	  templates.navbrowse = Template7.compile($$('#navbrowse').html());
@@ -45,7 +49,7 @@ var app  = new Framework7({
   }
 });
 
-app.panel.enableSwipe('left');
+//app.panel.enableSwipe('left');
 
 var mainView = app.views.create('.view-main', {
   url: '/',
