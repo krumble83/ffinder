@@ -19,22 +19,13 @@ class UserSession {
 		$out = array();
 		
 		foreach($this->mDlm as $k=>$v){
+			if($v['ffinder'] && $v['ffinder']['categories']){
+				if(!in_array($category, $v['ffinder']['categories']))
+					continue;
+			}
 			if(!isset($out[$v['type']]))
 				$out[$v['type']] = array();
 			array_push($out[$v['type']], (object) array('name' => $k, 'title' => $v['displayname'], 'version' => $v['version'], 'site' => $v['site']));
-		}
-		//return $this->mDlm;
-		return $out;
-
-	}
-
-	public function getDlms2($type, $category){
-		$out = array();
-		
-		foreach($this->mDlm as $k=>$v){
-			if($v['type'] != $type)
-				continue;
-			array_push($out, (object) array('name' => $k, 'title' => $v['displayname']));
 		}
 		//return $this->mDlm;
 		return $out;
