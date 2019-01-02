@@ -106,12 +106,14 @@ var mainView = app.views.create('.view-main', {
 			resolve({template: templates[data['main'].tpl](data['main'])});
 			return;
 		}
-		if(!routeTo.hash)
-			return reject();
-
-		resolve({template: templates[data[routeTo.hash].tpl](data[routeTo.hash])});
+		else if(routeTo.hash && data[routeTo.hash]){
+			resolve({template: templates[data[routeTo.hash].tpl](data[routeTo.hash])});
+			return;
+		}
+		else
+			reject();	
 		//resolve({ template: templates.navpage(data[routeTo.hash])});
-        //resolve({ pageName: routeTo.hash });
+	        //resolve({ pageName: routeTo.hash });
       }
 	}
   ],
