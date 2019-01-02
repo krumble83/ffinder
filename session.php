@@ -41,18 +41,19 @@ class UserSession {
 	}
 	
 	public function search($string, $dlm){
+		$res = array();
 		$dlm = $this->getDlmByName($dlm);
 		if(!$dlm)
-			return;
+			return $res;
 		require_once($dlm['dlmpath'].'/'.$dlm['module']);
 		$dlmi = new $dlm['class']();
 		$curl = curl_init(); 
 		$dlmi->prepare($curl, $string, $_COOKIE["dlm_$dml_username"], $_COOKIE["dlm_$dml_password"]);
+		return $res;
 	}
 	
 	public function getbrowsepage($dlm, $page){
-		if(!$dlm)
-			$dlm
+		
 	}
 	
 	private function loadDlms(){

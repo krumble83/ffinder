@@ -38,8 +38,9 @@ switch($_GET['action']){
 		break;
 		
 	case 'search':
-		$res = $session->search($_GET['string'], $_GET['dlm']);
-		exit(json_encode($res));
+		//header('Content-Type: application/json');
+		echo json_encode($session->search($_GET['string'], $_GET['dlm']));
+		exit();
 		break;
 		
 	case 'getbrowsepage':

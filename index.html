@@ -7,44 +7,40 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="mobile-web-app-capable" content="yes">
 		<link rel="icon" type="image/png" href="logo.png" />
-		<link rel="stylesheet" href="css/framework7.md.min.css">
+		<link rel="stylesheet" href="css/framework7.min.css">
 		<link rel="stylesheet" href="css/index.css">
 		<title>fFinder</title>
+
 		<style>
-			html{touch-action: 'pan-down'}
+			body,
+			html{
+				overscroll-behavior: contain;
+			}
 		</style>
 	</head>
 	<body>
-		<!-- APP -->
 		<div id="app">
-			<!-- Menú -->
-			<div class="statusbar"></div>
-			<!-- Menú izquierda -->
 			<div class="panel panel-left panel-cover" data-swipe-active-area="20">
 				<div class="view">
 					<div class="page">
-						<div class="navbar">
-							<div class="navbar-inner">
-								<div class="title">Menu</div>
-						  <div class="right">
-							<a class="link icon-only">
-							  <i class="icon f7-icons ios-only">cloud_download_fill<span class="badge color-red">120</span></i>
-							  <i class="icon material-icons md-only">cloud_download<span class="badge color-red">120</span></i>
-							</a>
-						  </div>
-							</div>
-						</div>
 						<div class="page-content">
+							<img src="navbg.jpg" style="max-height: 200px;" />
 							<div class="list">
 								<ul>
 									<li>
-										<a href="/" class="item-content item-link panel-close">
+										<a href="/settings/" class="item-content item-link panel-close">
 											<div class="item-inner">
 												<div class="item-title">{{translate 'SETTINGS_BUTTON'}}</div>
 											</div>
 										</a>
 									</li>
 									<li>
+										<a href="/dos/" class="item-content item-link panel-close">
+											<div class="item-inner">
+												<div class="item-title">{{translate 'DLM_BUTTON'}}</div>
+											</div>
+										</a>
+									</li>									<li>
 										<a href="/dos/" class="item-content item-link panel-close">
 											<div class="item-inner">
 												<div class="item-title">{{translate 'ABOUT_BUTTON'}}</div>
@@ -57,9 +53,24 @@
 					</div>
 				</div>
 			</div>
-			<!-- Vista principal -->
-			<div class="view view-main"></div>
-			<div class="view view-settings"></div>
+			<div class="views tabs">
+				<div class="view view-main tab tab-active"></div>
+				
+				<div id="view-settings" class="view tab">
+					<div class="navbar">
+						<div class="navbar-inner sliding">
+							<div class="left">
+								<a href="#" class="link back">
+									<i class="icon icon-back"></i>
+									<span class="ios-only">Back</span>
+								</a>
+							</div>					
+							<div class="title">Settings</div>
+						</div>
+					</div>				
+					<div class="page">www</div>
+				</div>
+			</div>
 		</div>
 
 		<script type="text/template7" id="navbar">
@@ -81,7 +92,7 @@
 					{{/if}}
 					<div class="title">{{pageTitle}}</div>
 					<div class="right">
-						<a class="link icon-only">
+						<a class="link icon-only" onclick="location.reload();">
 							<i class="icon f7-icons ios-only">cloud_download_fill<span class="badge countdown color-red">120</span></i>
 							<i class="icon material-icons md-only">cloud_download<span class="badge countdown color-red">120</span></i>
 						</a>
@@ -95,12 +106,12 @@
 				{{> navbar}}
 				<div class="page-content hide-navbar-on-scroll">
 					<br />
-					<form id="search_{{category}}" action="search.php?action=search&category={{category}}" method="POST" class="form-store-data">
+					<form id="search_{{category}}" action="search.php?action=search&category={{category}}" method="POST" class="form-store-data form-ajax-submit searchform">
 						<div class="searchbar inset">
 							<div class="searchbar-inner">
 								<div class="searchbar-input-wrap">
 									<!--<span contenteditable="true" style="width:70%;padding-left: 65px;box-sizing: border-box;display:block">search</span>-->
-									<input name="search" type="search" placeholder="{{translate 'SEARCH'}}" class="ignore-store-data">
+									<input name="query" type="search" class="no-store-data ignore-store-data" placeholder="{{translate 'SEARCH'}}">
 									<i class="searchbar-icon"></i>
 									<span class="input-clear-button"></span>
 								</div>
@@ -130,12 +141,41 @@
 							</ul>
 						</div>
 						<div class="fab fab-extended fab-center-bottom" style="width:150px">
-							<input type="submit" style="width:150px" value="{{translate 'SEARCH'}}" />
+							<input type="submit" style="width:150px" value="{{translate 'SEARCH'}}" onclick="searchString('search_{{category}}')" />
 						</div>
 					</form>
 				</div>
 			</div>
 		</script>
+
+		<script type="text/template7" id="resultpage">
+		<div class="page">
+				{{> navbar}}
+				<div class="page-content hide-navbar-on-scroll">
+					
+					<div class="list media-list">
+					  <ul>
+						{{#each childs}}			
+						<li>
+						  <a href="{{#if this.target}}{{getTarget this.target}}{{else}}/search/?category={{@key}}&title={{this.title}}{{/if}}" class="item-content item-link panel-close">
+							{{#if this.img}}
+							<div class="item-media"><img height="32" width="32" src="{{this.img}}" width="80"/></div>
+							{{/if}}
+							<div class="item-inner">
+								<div class="item-title-row">
+									<div class="item-title">{{this.title}}</div>
+								</div>
+								<div class="item-subtitle">{{description}}</div>
+							</div>
+						  </a>
+						</li>
+						{{/each}}
+					  </ul>
+					</div>
+				</div>
+			</div>
+		</script>
+
 		
 		<script type="text/template7" id="navpage">
 			<div class="page">
@@ -203,7 +243,7 @@
 		
 		<script src="search.php?action=getnav"></script>
 		<script src="js/framework7.min.js"></script>
-		<script src="js/index.js"></script>
+		<script src="index.js"></script>
 		<script></script>
 	</body>
 </html>

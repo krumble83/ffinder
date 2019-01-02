@@ -24,9 +24,7 @@ var app  = new Framework7({
   panel: {
     swipe: 'left',
     swipeActiveArea: 50,
-  },	
-  swipePanel: 'left',
-  swipeActiveArea: 20,
+  },
   on: {
     init: function () {
 	  templates.navpage = Template7.compile($$('#navpage').html());
@@ -35,26 +33,61 @@ var app  = new Framework7({
 	  Template7.registerPartial('navbar', $$('#navbar').html());
 	  
 	  return;
-	  var quit = true;
+	  var stateObj = { quit: true };
+	  //window.history.replaceState({ quit: true }, null, document.url);
+	  window.history.pushState(null, null, document.url);
+	  	  
 	  window.onpopstate = function(event) {
-		  alert(event.state, quit);
-		  if(event.state == null && quit)
-			  alert('quit');
-		  else if(event.state == null)
-			  quit = true;
-		  else
-			  quit = false;
+		  //console.log(event, window.history.state);
+		  //alert(window.history.length);
+		  //return;
+		  if(!window.history.state)
+			  window.history.pushState(null, null, document.url);
+		  
+		  event.preventDefault();
+		  return;
+		  if(Object.keys(window.history.state).length == 1){
+				toastCenter = app.toast.create({
+				  text: 'Press Back again to exit Application',
+				  position: 'center',
+				  closeTimeout: 2000,
+				}).open();
+			  //quit = true;
+			  //window.history.pushState(null, null, document.URL);
+		  }
+		  else if(window.history.state == null){
+			window.history.replaceState({ quit: true }, null, document.url);
+			//window.history.pushState(null, null, document.url);			  
+		  }
 		};
-    }
+		
+	  window.onhashchange = function(event){
+		  console.log(event);
+	  }
+    },
+	formAjaxSuccess: function (formEl, data, xhr) {
+		console.dir(arguments);
+		if($$(formEl).hasClass('searchform'))
+			console.log('ok');
+	},
+	
   }
 });
 
-//app.panel.enableSwipe('left');
+
+$$(document).on('pageBeforeInit', '[data-page="smart-select-popup"]', function (e) {
+    var page = e.detail.page;
+	console.log(page);
+    // Add not found relation
+    $$(page.container).find('.searchbar').attr('data-searchbar-not-found', '.searchbar-not-found');
+    // Add link to add new option
+    $$(page.container).find('.page-content').append('<a href="#" class="add-option searchbar-not-found">Add New Option</a>');
+});
 
 var mainView = app.views.create('.view-main', {
   url: '/',
   stackPages: true,
-  pushState: "true",
+  pushState: true,
   routes: [
     {
 	  path: '/search/',
@@ -80,6 +113,14 @@ var mainView = app.views.create('.view-main', {
   	  }
 	},
 	
+	{
+	  path: '/settings/',
+	  async(){
+		  console.log('gg');
+		  app.tab.show("#view-settings")
+	  }
+	},
+
 	{
 	  path: '/browse/',
 	  async(routeTo, routeFrom, resolve, reject) {		
@@ -118,6 +159,26 @@ var mainView = app.views.create('.view-main', {
 	}
   ],
 });
+
+app.views.create('#view-settings', {
+  url: '/settings/',
+  stackPages: true,
+  pushState: true
+});
+
+function searchString(formid){
+	var res = app.form.convertToData('#'+formid);
+	console.log(res);
+	
+	$$('form.form-ajax-submit').on('formajax:success', function (e, data, xhr) {
+	  var xhr = e.detail.xhr; // actual XHR object
+
+	  //var data = e.detail.data; // Ajax response from action file
+	  
+	});
+
+}
+
 
 var lastTimeBackPress=0;
 var timePeriodToExit=2000;
