@@ -50,6 +50,11 @@ class UserSession {
 		
 	}
 	
+	public function getbrowsepage($dlm, $page){
+		if(!$dlm)
+			$dlm
+	}
+	
 	private function loadDlms(){
 		$dir    = 'dlm';
 		$files = scandir($dir);
