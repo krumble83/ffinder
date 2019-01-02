@@ -112,6 +112,11 @@ class UserSession {
 			$json2 = json_decode($string, true);
 			$json['ffinder'] = $json2;
 		}
+		if(file_exists("$path/BROWSE")){
+			$string = file_get_contents("$path/BROWSE");
+			$json2 = json_decode($string, true);
+			$json['browse'] = $json2;
+		}
 		return $json;
 	}
 	
