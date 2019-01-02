@@ -3,6 +3,14 @@
 	"categories": ["mp3songs"],
 	"lang": "fr",
 	"author_name": "krumble",
-	"author_email": "krumble83@gmail.com"
+	"author_email": "krumble83@gmail.com",
+	"app": {
+		"main": {
+			"title" :"",
+			"childs": [
+				"top20": {"title": "TOP 20", "target": ""}
+			]
+		}
+	}
 	}
 }
