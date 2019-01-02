@@ -20,10 +20,10 @@
 		"childs": {
 			"movies": {"title": "Movies", "description": "", "img": "img/movie.png"}, 
 			"tvshows": {"title": "TV Shows", "description": "", "img": "img/tvshow.png"}, 
-			"comic": {"title": "Comics Movies", "description": "", "img": "img/comic.png"}, 
-			"animation": {"title": "Animation Movies", "description": ""}, 
-			"documentary": {"title": "Documentary", "description": "", "img": "img/documentary.png"}, 
-			"tvprogram": {"title": "TV Programs", "description": "", "img": "img/tvprogram.png"}, 
+			"comics": {"title": "Comics Movies", "description": "", "img": "img/comic.png"}, 
+			"animations": {"title": "Animation Movies", "description": ""}, 
+			"documentaries": {"title": "Documentary", "description": "", "img": "img/documentary.png"}, 
+			"tvprograms": {"title": "TV Programs", "description": "", "img": "img/tvprogram.png"}, 
 		}
 	},
 		
@@ -48,9 +48,9 @@
 		"pageTitle": "Microsoft Console Games",
 		"tpl": "navpage",
 		"childs": {
-			"mxbox": {"title": "Xbox Games", "img": "img/xbox.png"}, 
-			"mxbox360": {"title": "Xbox 360 Games", "img": "img/xbox.png"}, 
-			"mxboxone": {"title": "Xbox One Games", "img": "img/xbox.png"}, 
+			"msxbox": {"title": "Xbox Games", "img": "img/xbox.png"}, 
+			"msxbox360": {"title": "Xbox 360 Games", "img": "img/xbox.png"}, 
+			"msxboxone": {"title": "Xbox One Games", "img": "img/xbox.png"}, 
 		}
 	},
 	"nintendogames": {
@@ -101,8 +101,8 @@
 		"pageTitle": "Audio",
 		"tpl": "navpage",
 		"childs": {
-			"mp3song": {"title": "Mp3 Song", "img": "img/song.png"}, 
-			"mp3album": {"title": "Mp3 Album", "img": "img/album.png"}
+			"mp3songs": {"title": "Mp3 Song", "img": "img/song.png"}, 
+			"mp3albums": {"title": "Mp3 Album", "img": "img/album.png"}
 		}
 	},
 
@@ -110,10 +110,10 @@
 		"pageTitle": "Ebooks",
 		"tpl": "navpage",
 		"childs": {
-			"books": {"title": "Books", "img": "img/ebook.png"}, 
-			"audiobooks": {"title": "Audio Books", "img": "img/audiobook.png"}, 
-			"comics": {"title": "Comics", "img": "img/comic.png"}, 
-			"mangas": {"title": "Mangas"}, 
+			"ebookbooks": {"title": "Books", "img": "img/ebook.png"}, 
+			"ebookaudio": {"title": "Audio Books", "img": "img/audiobook.png"}, 
+			"ebookcomics": {"title": "Comics", "img": "img/comic.png"}, 
+			"ebookmangas": {"title": "Mangas"}, 
 		}
 	},
 	
