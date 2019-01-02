@@ -105,12 +105,12 @@
 				{{> navbar}}
 				<div class="page-content">
 					<br />
-					<form action="search.php?action=search&category={{category}}" method="POST" class="form-ajax-submit">
+					<form id="search_{{category}}" action="search.php?action=search&category={{category}}" method="POST" class="form-store-data">
 						<div class="searchbar inset">
 							<div class="searchbar-inner">
 								<div class="searchbar-input-wrap">
 									<!--<span contenteditable="true" style="width:70%;padding-left: 65px;box-sizing: border-box;display:block">search</span>-->
-									<input type="search" placeholder="{{translate 'SEARCH'}}">
+									<input name="search" type="search" placeholder="{{translate 'SEARCH'}}" class="ignore-store-data">
 									<i class="searchbar-icon"></i>
 									<span class="input-clear-button"></span>
 								</div>
