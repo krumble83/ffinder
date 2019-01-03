@@ -163,7 +163,17 @@ var mainView = app.views.create('.view-main', {
 app.views.create('#view-settings', {
   url: '/settings/',
   stackPages: true,
-  pushState: true
+  pushState: true,
+  routes: [
+	{
+		path: '/',
+		async(){
+			console.log('gg');
+			app.tab.show(".view-main");
+	  	}
+	  },
+  ],
+	
 });
 
 function searchString(formid){
