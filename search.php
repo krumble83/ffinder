@@ -28,17 +28,27 @@ session_write_close();
 
 switch($_GET['action']){
 	case 'getnav':
-		echo 'var data='.file_get_contents('data/en.json');
+		$data = json_decode(file_get_contents('data/data.json'), true);
+		if($_GET['lang']){
+			$lang = json_decode(file_get_contents('data/'.$_GET['lang'].'.json'), true);
+		}
+		if(!isset($lang))
+			$lang = json_decode(file_get_contents('data/en.json'), true);
+		
+		$data = array_merge($data, $lang);			
+		header('Content-Type: application/json');
+		echo 'var data='.json_encode($data);
 		exit();
 		break;
 		
 	case 'getdlms':
+		header('Content-Type: application/json');
 		echo json_encode($session->getDlms($_GET['category']));
 		exit();
 		break;
 		
 	case 'search':
-		//header('Content-Type: application/json');
+		header('Content-Type: application/json');
 		echo json_encode($session->search($_GET['string'], $_GET['dlm']));
 		exit();
 		break;
