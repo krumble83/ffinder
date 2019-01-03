@@ -14,7 +14,7 @@ Template7.registerHelper('getTarget', function (name) {
 });
 
 Template7.registerHelper('translate', function (name) {
-  return data['_strings'][name];
+  return (data['_strings'] && data['_strings'][name]) ? data['_strings'][name] : name;
 });
 
 
