@@ -93,6 +93,20 @@
       <form id="dlmanager_synology">
         <div class="list no-hairlines-md">
           <ul>
+             <li>
+              <a class="item-link smart-select smart-select-init" data-open-in="sheet">
+                <select name="dlmanager" onchange="alert('change')">
+                  <option value="none">None</option>
+                  <option value="dlmanager_synology" selected>Synology Download Station</option>
+                  <option value="dlmanager_pyload">PyLoad Download Manager</option>
+                </select>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title">{{translate 'SETTINGS_DL_MANAGER'}}</div>
+                  </div>
+                </div>
+              </a>
+            </li>
             <li class="item-content item-input">
               <div class="item-inner">
                 <div class="item-title item-label">{{translate 'SETTINGS_DL_MANAGER_HOST'}}</div>
