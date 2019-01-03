@@ -4,21 +4,21 @@
       <div class="list">
         <ul>
           <li>
-            <a href="/account/" class="item-content item-link panel-close">
+            <a href="/account/" class="item-content item-link">
               <div class="item-inner">
                 <div class="item-title">{{translate 'SETTINGS_ACCOUNT'}}</div>
               </div>
             </a>
           </li>
           <li>
-            <a href="/general/" class="item-content item-link panel-close">
+            <a href="/general/" class="item-content item-link">
               <div class="item-inner">
                 <div class="item-title">{{translate 'SETTINGS_GENERAL'}}</div>
               </div>
             </a>
           </li>
           <li>
-            <a href="/dlmanager/" class="item-content item-link panel-close">
+            <a href="/dlmanager/" class="item-content item-link">
               <div class="item-inner">
                 <div class="item-title">{{translate 'SETTINGS_DL_MANAGER'}}</div>
               </div>
@@ -28,19 +28,94 @@
       </div>
     </div>
   </div>
+  
+  <div class="page stacked" data-name="account"></div>
+  
   <div class="page stacked" data-name="general">
     <div class="page-content">
-      <div class="list">
-        <ul>
-          <li>
-            <a href="/account/" class="item-content item-link panel-close">
+      <form id="general">
+        <div class="list">
+          <ul>
+            <li>
+              <a class="item-link smart-select smart-select-init" data-open-in="sheet">
+                <select name="general_lang" onchange="alert('change')">
+                  <option value="auto" selected>Auto</option>
+                  <option value="en">English</option>
+                  <option value="fr">Francais</option>
+                </select>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title">{{translate 'SETTINGS_PREFERED_LANGUAGE'}}</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div class="page stacked" data-name="dlmanager">
+    <div class="page-content">
+      <form id="dlmanager">
+        <div class="list">
+          <ul>
+            <li>
+              <a class="item-link smart-select smart-select-init" data-open-in="sheet">
+                <select name="dlmanager" onchange="alert('change')">
+                  <option value="none" selected>None</option>
+                  <option value="dlmanager_synology">Synology Download Station</option>
+                  <option value="dlmanager_pyload">PyLoad Download Manager</option>
+                </select>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title">{{translate 'SETTINGS_DL_MANAGER'}}</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </form>
+    </div> 
+  </div>
+  
+  <div class="page stacked" data-name="dlmanager_synology">
+    <div class="page-content">
+      <form id="dlmanager_synology">
+        <div class="list no-hairlines-md">
+          <ul>
+            <li class="item-content item-input">
               <div class="item-inner">
-                <div class="item-title">{{translate 'SETTINGS_LANG'}}</div>
+                <div class="item-title item-label">{{translate 'SETTINGS_DL_MANAGER_HOST'}}</div>
+                <div class="item-input-wrap">
+                  <input name="dlmanager_synology_hostname" type="text" placeholder="hostname or IP">
+                  <span class="input-clear-button"></span>
+                </div>
               </div>
-            </a>
-          </li>
-        </ul>
-      </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">{{translate 'SETTINGS_DL_MANAGER_USERNAME'}}</div>
+                <div class="item-input-wrap">
+                  <input name="dlmanager_synology_username" type="text" placeholder="{{translate 'SETTINGS_DL_MANAGER_PREFIX'}}{{translate 'SETTINGS_DL_MANAGER_USERNAME'}}">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">{{translate 'SETTINGS_DL_MANAGER_PASSWORD'}}</div>
+                <div class="item-input-wrap">
+                  <input name="dlmanager_synology_password" type="password" placeholder="{{translate 'SETTINGS_DL_MANAGER_PREFIX'}}{{translate 'SETTINGS_DL_MANAGER_PASSWORD'}}">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </form>
     </div>
   </div>
 </div>
