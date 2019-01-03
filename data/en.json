@@ -75,7 +75,7 @@
 	"_sidebar": {
 		"childs": {
 			"settings": {"title": "Settings"},
-			"modules": {"title": "Modules"},
+			"modules": {"title": "Download Modules"},
 			"about": {"title": "About"},
 		}	
 	},
@@ -95,11 +95,24 @@
 		"DOWNLOAD_TYPE": "Downloads types :",
 		"SEARCH": "Search",
 		"LOOKING_FOR": "What are you looking for ?",
-		"SETTINGS_BUTTON": "Settings",
-		"ABOUT_BUTTON": "About",
 		"ALL_NONE": "* All / None",
 		"BROWSE_FAVORITES": "Favorites :",
 		"BROWSE_OTHERS": "Others :",
+
+		"SETTINGS_BUTTON": "Settings",
+		"DLM_BUTTON": "Download Modules"
+		"ABOUT_BUTTON": "About",
+		
+		"SETTINGS_ACCOUNT": "Account",
+		"SETTINGS_GENERAL": "General",
+		"SETTINGS_DL_MANAGER": "Download Manager",
+		"SETTINGS_PREFERED_LANGUAGE": "Prefered Language",
+		"SETTINGS_DL_MANAGER_HOST": "Host",
+		"SETTINGS_DL_MANAGER_PREFIX": "Your ",
+		"SETTINGS_DL_MANAGER_USERNAME": "Username",
+		"SETTINGS_DL_MANAGER_PASSWORD": "Prefered Language",
+		
+	
 	}
 
 }
