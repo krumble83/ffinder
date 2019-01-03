@@ -1,0 +1,105 @@
+{
+	"main": {
+		"pageTitle": "fFinder",
+		"childs": {
+			"videos": {"title": "Videos", "description": "Movies, TV Shows, TV Programs ..."},
+			"audio": {"title": "Audio", "description": "Songs, Albums ..."},
+			"games": {"title": "Video Games", "description": "PC, Mac, Console or Android Games"},
+			"applications": {"title": "Applications", "description": "Applications for PC/Mac/Android"},
+			"ebooks": {"title": "Ebooks", "description": "Electronic books ..."},
+			"z": {"label": "Browse"},
+			"browse": {"title": "Latest posts"},
+		}
+	},
+
+	"videos": {
+		"pageTitle": "Videos",
+		"childs": {
+			"movies": {"title": "Movies"}, 
+			"tvshows": {"title": "TV Shows"}, 
+			"comics": {"title": "Comics Movies"}, 
+			"animations": {"title": "Animation Movies"}, 
+			"documentaries": {"title": "Documentary"}, 
+			"tvprograms": {"title": "TV Programs"}, 
+		}
+	},
+		
+	"games": {
+		"pageTitle": "Video Games",
+		"childs": {
+			"wingames": {"title": "Windows Games"}, 
+			"macgames": {"title": "Mac Games"}, 
+
+			"msgames": {"title": "Microsoft Console Games"}, 
+			"sonygames": {"title": "Sony Console Games"}, 
+			"nintendogames": {"title": "Nintendo Console Games"}, 
+			
+			"androidgames": {"title": "Android Game"}, 
+			"lingames": {"title": "Linux Games"}, 
+			"arcadegames": {"title": "Arcade Games"}, 
+		}
+	},
+	
+	"applications": {
+		"pageTitle": "Applications",
+		"childs": {
+			"winapps": {"title": "Windows Application"}, 
+			"macapps": {"title": "Mac Application"}, 
+			"androidapps": {"title": "Android Application"}, 
+			"linapps": {"title": "Linux Application"}, 
+		}
+	},
+
+	"audio": {
+		"pageTitle": "Audio",
+		"childs": {
+			"mp3songs": {"title": "Mp3 Song"}, 
+			"mp3albums": {"title": "Mp3 Album"}
+		}
+	},
+
+	"ebooks": {
+		"pageTitle": "Ebooks",
+		"childs": {
+			"ebookbooks": {"title": "Books"}, 
+			"ebookaudio": {"title": "Audio Books"}, 
+			"ebookcomics": {"title": "Comics"}, 
+			"ebookmangas": {"title": "Mangas"}, 
+		}
+	},
+	
+	"_browse": {
+		"pageTitle": "Browse"
+	},
+
+	"_sidebar": {
+		"childs": {
+			"settings": {"title": "Settings"},
+			"modules": {"title": "Modules"},
+			"about": {"title": "About"},
+		}	
+	},
+	
+	"_search": {
+		"pageTitle": "SEARCH"
+	},
+	
+	"_typelabel": {
+		"search": "Bitorrents",
+		"filehoster": "File Hosters",
+		"directdl": "Direct Downloads",
+		"board": "Boards"
+	},
+	
+	"_strings": {
+		"DOWNLOAD_TYPE": "Downloads types :",
+		"SEARCH": "Search",
+		"LOOKING_FOR": "What are you looking for ?",
+		"SETTINGS_BUTTON": "Settings",
+		"ABOUT_BUTTON": "About",
+		"ALL_NONE": "* All / None",
+		"BROWSE_FAVORITES": "Favorites :",
+		"BROWSE_OTHERS": "Others :",
+	}
+
+}
