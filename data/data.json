@@ -1,0 +1,127 @@
+{
+	"main": {
+		"tpl": "navpage",
+		"main": "1",
+		"childs": {
+			"videos": {"target": "videos", "img": "img/video.png"},
+			"audio": {"target": "audio", "img": "img/audio.png"},
+			"games": {"target": "games", "img": "img/games.png"},
+			"applications": {"target": "applications", "img": "img/application.png"},
+			"ebooks": {"target": "ebooks", "img": "img/ebook.png"},
+			"z": {"label": "Browse"},
+			"browse": {"target": "/browse/", "img": "img/new.png"},
+		}
+	},
+
+	"videos": {
+		"tpl": "navpage",
+		"childs": {
+			"movies": {"img": "img/movie.png"}, 
+			"tvshows": {"img": "img/tvshow.png"}, 
+			"comics": {"img": "img/comic.png"}, 
+			"animations": {}, 
+			"documentaries": {"img": "img/documentary.png"}, 
+			"tvprograms": {"img": "img/tvprogram.png"}, 
+		}
+	},
+		
+	"games": {
+		"tpl": "navpage",
+		"childs": {
+			"wingames": {"img": "img/windows.png"}, 
+			"macgames": {"img": "img/mac.png"}, 
+
+			"msgames": {"target": "msgames", "img": "img/xbox.png"}, 
+			"sonygames": {"target": "sonygames", "img": "img/sony.png"}, 
+			"nintendogames": {"target": "nintendogames", "img": "img/nintendo.png"}, 
+			
+			"androidgames": {"img": "img/android.png"}, 
+			"lingames": {"img": "img/linux.png"}, 
+			"arcadegames": {"img": "img/arcade.png"}, 
+		}
+	},
+
+	"msgames": {
+		"tpl": "navpage",
+		"childs": {
+			"msxbox": {"title": "Xbox", "img": "img/xbox.png"}, 
+			"msxbox360": {"title": "Xbox 360 Games", "img": "img/xbox.png"}, 
+			"msxboxone": {"title": "Xbox One Games", "img": "img/xbox.png"}, 
+		}
+	},
+	"nintendogames": {
+		"tpl": "navpage",
+		"childs": {
+			"nswitch": {"title": "Nintendo Switch", "img": "img/nswitch.png"},
+			"nwiiu": {"title": "Nintendo Wii U", "img": "img/wiiu.png"},
+			"nwii": {"title": "Nintendo Wii", "img": "img/wii.png"},
+			"ngc": {"title": "Nintendo GameCube"}, 
+			"n64": {"title": "Nintendo 64"}, 
+			"nsnes": {"title": "Nintendo Super NES"}, 
+			"nnes": {"title": "Nintendo NES"}, 
+
+			"n3ds": {"title": "Nintendo 3DS"}, 
+			"nds": {"title": "Nintendo DS"}, 
+			"ngba": {"title": "Nintendo GameBoy Advance"}, 
+			"ngbc": {"title": "Nintendo GameBoy Color"}, 
+			"ngb": {"title": "Nintendo GameBoy", "img": "img/game-boy.png"}, 
+		}
+	},
+
+	"sonygames": {
+		"tpl": "navpage",
+		"childs": {
+			"sps4": {"title": "PS4 Games", "img": "img/ps4.png"}, 
+			"sps3": {"title": "PS3 Games", "img": "img/ps3.png"}, 
+			"sps2": {"title": "PS2 Games", "img": "img/ps2.png"}, 
+			"spsone": {"title": "Playstation", "img": "img/sony.png"}, 
+			"spsvita": {"title": "PSP Vita", "img": "img/psvita.png"}, 
+			"spsp": {"title": "PSP Games", "img": "img/psp.png"}, 
+		}
+	},
+	
+	"applications": {
+		"tpl": "navpage",
+		"childs": {
+			"winapps": {"img": "img/pc.png"}, 
+			"macapps": {"img": "img/mac.png"}, 
+			"androidapps": {"img": "img/android.png"}, 
+			"linapps": {"img": "img/pc.png"}, 
+		}
+	},
+
+	"audio": {
+		"tpl": "navpage",
+		"childs": {
+			"mp3songs": {"img": "img/song.png"}, 
+			"mp3albums": {"img": "img/album.png"}
+		}
+	},
+
+	"ebooks": {
+		"tpl": "navpage",
+		"childs": {
+			"ebookbooks": {"img": "img/ebook.png"}, 
+			"ebookaudio": {"img": "img/audiobook.png"}, 
+			"ebookcomics": {"img": "img/comic.png"}, 
+			"ebookmangas": {}, 
+		}
+	},
+	
+	"_browse": {
+		"tpl": "navbrowse",
+	
+	},
+
+	"_sidebar": {
+		"childs": {
+			"settings": {"img": "img/ebook.png", "target": "/settings/"}, 
+			"modules": {"img": "img/audiobook.png", "target": "/modules/"}, 
+			"about": {"img": "img/comic.png", "target": "/about/"}, 
+		}	
+	},
+	
+	"_search": {
+		"tpl": "navpage",
+	}
+}
